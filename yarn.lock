@@ -297,9 +297,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@larry/web-detector-rs@workspace:.":
+"@larryz/web-detector-rs@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@larry/web-detector-rs@workspace:."
+  resolution: "@larryz/web-detector-rs@workspace:."
   dependencies:
     "@emnapi/core": "npm:^1.5.0"
     "@emnapi/runtime": "npm:^1.5.0"

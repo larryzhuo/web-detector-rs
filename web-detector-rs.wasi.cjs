@@ -39,9 +39,9 @@ if (__nodeFs.existsSync(__wasmDebugFilePath)) {
   __wasmFilePath = __wasmDebugFilePath
 } else if (!__nodeFs.existsSync(__wasmFilePath)) {
   try {
-    __wasmFilePath = __nodePath.resolve('@larry/web-detector-rs-wasm32-wasi')
+    __wasmFilePath = __nodePath.resolve('@larryz/web-detector-rs-wasm32-wasi')
   } catch {
-    throw new Error('Cannot find web-detector-rs.wasm32-wasi.wasm file, and @larry/web-detector-rs-wasm32-wasi package is not installed.')
+    throw new Error('Cannot find web-detector-rs.wasm32-wasi.wasm file, and @larryz/web-detector-rs-wasm32-wasi package is not installed.')
   }
 }
 

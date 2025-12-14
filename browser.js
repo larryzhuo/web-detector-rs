@@ -1,1 +1,1 @@
-export * from '@larry/web-detector-rs-wasm32-wasi'
+export * from '@larryz/web-detector-rs-wasm32-wasi'
