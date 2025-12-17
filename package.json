@@ -109,24 +109,5 @@
     "singleQuote": true,
     "arrowParens": "always"
   },
-  "packageManager": "yarn@4.12.0",
-  "dependencies": {
-    "@napi-rs/package-template": "^1.0.0"
-  },
-  "optionalDependencies": {
-    "@larryz/web-detector-rs-win32-x64-msvc": "1.0.0",
-    "@larryz/web-detector-rs-darwin-x64": "1.0.0",
-    "@larryz/web-detector-rs-linux-x64-gnu": "1.0.0",
-    "@larryz/web-detector-rs-linux-x64-musl": "1.0.0",
-    "@larryz/web-detector-rs-linux-arm64-gnu": "1.0.0",
-    "@larryz/web-detector-rs-win32-ia32-msvc": "1.0.0",
-    "@larryz/web-detector-rs-linux-arm-gnueabihf": "1.0.0",
-    "@larryz/web-detector-rs-darwin-arm64": "1.0.0",
-    "@larryz/web-detector-rs-android-arm64": "1.0.0",
-    "@larryz/web-detector-rs-freebsd-x64": "1.0.0",
-    "@larryz/web-detector-rs-linux-arm64-musl": "1.0.0",
-    "@larryz/web-detector-rs-win32-arm64-msvc": "1.0.0",
-    "@larryz/web-detector-rs-android-arm-eabi": "1.0.0",
-    "@larryz/web-detector-rs-wasm32-wasi": "1.0.0"
-  }
+  "packageManager": "yarn@4.12.0"
 }
