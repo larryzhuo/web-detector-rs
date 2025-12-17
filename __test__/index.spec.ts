@@ -1,13 +1,13 @@
-import test from 'ava';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import test from 'ava'
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 
 import { plus100, detectLists } from '../index'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 test('sync function from native code', (t) => {
   const fixture = 42
@@ -17,9 +17,9 @@ test('sync function from native code', (t) => {
 test('detectLists function', (t) => {
   const filePath = path.join(__dirname, './test.html')
   // </html>`
-  const html = fs.readFileSync(filePath, 'utf8').toString();
+  const html = fs.readFileSync(filePath, 'utf8').toString()
   const results = detectLists(html)
-  console.log(JSON.stringify(results, null, 2))
+  console.log('test: ', JSON.stringify(results, null, 2))
 
   t.pass()
 })
