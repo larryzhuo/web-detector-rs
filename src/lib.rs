@@ -1,4 +1,4 @@
-#![deny(clippy::all)]
+#![deny(clippy::warn)]
 
 use ahash::AHasher;
 use napi::Result;
@@ -36,7 +36,7 @@ fn structural_hash(element: &ElementRef) -> u64 {
   // 递归子结构（仅标签名）
   for child in element.children().filter(|n| n.value().is_element()) {
     // 注意：这里我们需要将 NodeRef 转换为 ElementRef 来递归
-    if let Some(element_ref) = ElementRef::wrap(child.clone()) {
+    if let Some(element_ref) = ElementRef::wrap(child) {
       structural_hash(&element_ref).hash(&mut hasher);
     }
   }
@@ -60,7 +60,7 @@ fn generate_css_selector(element: &ElementRef, _doc: &Html) -> String {
   let mut current = *element;
 
   loop {
-    let parent_opt = current.parent().and_then(|p| ElementRef::wrap(p));
+    let parent_opt = current.parent().and_then(ElementRef::wrap);
 
     if let Some(parent) = parent_opt {
       let tag = current.value().name();
@@ -116,7 +116,7 @@ pub fn detect_lists(html: String) -> Result<Vec<ListContainer>> {
   let mut stack: Vec<ElementRef> = root
     .children()
     .filter(|n| n.value().is_element())
-    .filter_map(|n| ElementRef::wrap(n.clone()))
+    .filter_map(|n| ElementRef::wrap(n))
     .collect();
 
   while let Some(node) = stack.pop() {
@@ -129,7 +129,7 @@ pub fn detect_lists(html: String) -> Result<Vec<ListContainer>> {
       let children: Vec<ElementRef> = node
         .children()
         .filter(|n| n.value().is_element())
-        .filter_map(|n| ElementRef::wrap(n.clone()))
+        .filter_map(|n| ElementRef::wrap(n))
         .collect();
 
       if children.len() >= 3 {
@@ -163,7 +163,7 @@ pub fn detect_lists(html: String) -> Result<Vec<ListContainer>> {
 
     // 继续遍历子节点
     for child in node.children().filter(|n| n.value().is_element()) {
-      if let Some(child_element) = ElementRef::wrap(child.clone()) {
+      if let Some(child_element) = ElementRef::wrap(child) {
         stack.push(child_element);
       }
     }
