@@ -4,7 +4,7 @@
 
 # 注意
 
-macos m 芯片下，需要使用 `--target aarch64-apple-darwin` 编译。
+macos m 芯片下，需要使用 `--target aarch64-apple-darwin` 编译。否则会报错
 
 ```
 yarn build --target aarch64-apple-darwin
