@@ -21,7 +21,7 @@ fn get_node_name(node: &Node) -> &str {
   }
 }
 
-/// 为 DOM 节点生成结构指纹（忽略动态属性值，只关注标签结构）
+// 为 DOM 节点生成结构指纹（忽略动态属性值，只关注标签结构）
 fn structural_hash(element: &ElementRef) -> u64 {
   let mut hasher = AHasher::default();
   element.value().name().hash(&mut hasher);
