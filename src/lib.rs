@@ -54,7 +54,7 @@ fn structural_hash(element: &ElementRef) -> u64 {
   hasher.finish()
 }
 
-/// 生成近似 CSS selector 路径（用于定位）
+// 生成近似 CSS selector 路径（用于定位）
 fn generate_css_selector(element: &ElementRef, _doc: &Html) -> String {
   let mut path = Vec::new();
   let mut current = *element;
