@@ -13,7 +13,7 @@ pub fn plus_100(input: u32) -> u32 {
   input + 100
 }
 
-/// 获取节点名称
+// 获取节点名称
 fn get_node_name(node: &Node) -> &str {
   match node {
     Node::Element(e) => e.name.local.as_ref(),
